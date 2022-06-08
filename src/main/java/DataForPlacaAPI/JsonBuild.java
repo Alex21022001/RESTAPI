@@ -1,4 +1,6 @@
-package placeapi;
+package DataForPlacaAPI;
+
+import com.google.gson.Gson;
 
 public class JsonBuild {
     String accuracy;
@@ -14,12 +16,16 @@ public class JsonBuild {
         this.address = address;
         this.language = language;
     }
+    public void jsonBuid(){
+        Gson gson = new Gson();
+        gson.toJson(JsonBuild.class);
+    }
 
     public  String crateJson() {
         String json = "{\n" +
                 "  \"location\": {\n" +
                 "    \"lat\": 49.9996377758606,\n" +
-                "    \"lng\": 36.24502092656298\n" +
+                "    \"lng\": 36.24502092656298q\n" +
                 "  },\n" +
                 "  \"accuracy\": " + accuracy + " ,\n" +
                 "  \"name\": \"" + name + "\",\n" +

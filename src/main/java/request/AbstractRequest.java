@@ -1,6 +1,6 @@
 package request;
 
-import placeapi.JsonBuild;
+import DataForPlacaAPI.JsonBuild;
 
 import java.net.http.HttpClient;
 

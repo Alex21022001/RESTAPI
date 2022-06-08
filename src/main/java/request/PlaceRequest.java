@@ -1,12 +1,11 @@
 package request;
 
-import placeapi.DataForPlace;
-import placeapi.JsonBuild;
+import DataForPlacaAPI.DataForPlace;
+import DataForPlacaAPI.JsonBuild;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Path;

@@ -1,22 +1,19 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import placeapi.JsonBuild;
+import DataForPlacaAPI.JsonBuild;
 import request.PlaceRequest;
-
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
+import service.JsonGetReader;
+import service.JsonPostReader;
 
 public class PlaceTests {
     @Test
-    public void testGetRequest() throws IOException, InterruptedException, ExecutionException {
+    public void testGetRequest() {
         PlaceRequest coronaVirusRequests = new PlaceRequest();
+        JsonGetReader jsonGetReader = new JsonGetReader();
         coronaVirusRequests.getRequest();
-
-
+        Assert.assertEquals("English",jsonGetReader.getReader().language);
     }
 
     @ParameterizedTest
