@@ -19,7 +19,7 @@ public class JsonGetReader {
     public String language;
 
 
-    public  JsonGetReader getReader() {
+    public static JsonGetReader getReader() {
         Gson gson = new Gson();
         JsonGetReader jsonGetReader = null;
         try (FileReader fileReader = new FileReader("src/main/resources/getresponse.json")) {

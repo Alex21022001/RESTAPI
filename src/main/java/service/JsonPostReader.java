@@ -13,7 +13,7 @@ public class JsonPostReader {
     public String reference;
     public String id;
 
-    public JsonPostReader getReader() {
+    public static JsonPostReader getReader() {
         Gson gson = new Gson();
         JsonPostReader jsonPostReader = null;
         try (FileReader fileReader = new FileReader("src/main/resources/postresponse.json")) {

@@ -20,12 +20,12 @@ public class PlaceRequest extends AbstractRequest {
                 .POST(HttpRequest.BodyPublishers
                         .ofString(jsonBuild.crateJson()))
                 .build();
-        HttpResponse<Path> response = null;
         try {
             File file = new File("src/main/resources/postresponse.json");
             file.delete();
             file.createNewFile();
-            response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("src/main/resources/postresponse.json")));
+            HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("src/main/resources/postresponse.json")));
+            System.out.println(response.body());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -38,16 +38,13 @@ public class PlaceRequest extends AbstractRequest {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(DataForPlace.URL + DataForPlace.GET_END_POINT + DataForPlace.getHeaderForPlace()))
                 .build();
-        HttpResponse<Path> response = null;
         try {
             File file = new File("src/main/resources/getresponse.json");
             file.delete();
             file.createNewFile();
-
-            response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("src/main/resources/getresponse.json")));
+            HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("src/main/resources/getresponse.json")));
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
-
 }
